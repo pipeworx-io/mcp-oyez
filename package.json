@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-oyez",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Oyez SCOTUS MCP.",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-dbf805f7ec91e1ed9b2b6b019d60525596b8639e20f159ccda968949a9662d4d",
-    "sourceCommit": "adb69d997f82a62e8e22b594488c7d04a227db35"
+    "sourceHash": "v1-32279a07a421a143d191efc15c8b6b448ce8d40d14a8b961ef222b082c78d8c1",
+    "sourceCommit": "4d51421bd010ad9a322c2245b70b401604912eff"
   }
 }
