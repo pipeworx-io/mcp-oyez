@@ -1,0 +1,64 @@
+[
+  {
+    "name": "search_cases",
+    "description": "Search US Supreme Court (SCOTUS) cases from Oyez by term year and/or case-name substring. Returns compact summaries with the question presented, description, and IDs for get_case. If neither term nor name is given, defaults to the most recent term. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "term": {
+          "type": "number",
+          "description": "SCOTUS term year, e.g. 2023 (the term that began Oct 2023). Optional."
+        },
+        "name": {
+          "type": "string",
+          "description": "Case-name substring, filtered client-side, e.g. \"Harvard\", \"Trump\", \"abortion\". Optional."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max cases to return (default 15, max 30)."
+        }
+      }
+    }
+  },
+  {
+    "name": "get_case",
+    "description": "Get a full SCOTUS case from Oyez by term and docket number — question presented, facts, conclusion, decision (winning party, vote split, decision type), which justices were in the majority vs. dissent, advocates, and whether oral-argument audio exists. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "term": {
+          "type": "number",
+          "description": "SCOTUS term year, e.g. 2023."
+        },
+        "docket_number": {
+          "type": "string",
+          "description": "Docket number, e.g. \"22-448\" (CFPB v. Community Financial Services)."
+        }
+      },
+      "required": [
+        "term",
+        "docket_number"
+      ]
+    }
+  },
+  {
+    "name": "cases_by_term",
+    "description": "List the SCOTUS cases for a given term year from Oyez — compact summaries (name, docket, citation, short question, oyez_url). Use to browse a full term. Keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "term": {
+          "type": "number",
+          "description": "SCOTUS term year, e.g. 2022 or 2023."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max cases to return (default 20, max 40)."
+        }
+      },
+      "required": [
+        "term"
+      ]
+    }
+  }
+]
